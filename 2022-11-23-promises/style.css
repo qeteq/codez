@@ -1,0 +1,97 @@
+:root {
+    --bg-color: #f3f3f0;
+}
+
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.load-screen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery {
+    margin: 0 auto;
+    padding: 2rem 0;
+    max-width: 800px;
+}
+
+.gallery h1 {
+    margin: 1rem 0 3rem;
+}
+
+.gallery-item {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem 2rem;
+    margin: 0 0 4rem;
+}
+
+.gallery-item:last-child {
+    margin-bottom: 0;
+}
+
+.gallery-item .name {
+    margin: 0;
+    grid-column: 1 / span 2;
+}
+.gallery-item img {
+    min-width: 0;
+    max-width: 100%;
+}
+.gallery-item .desc {
+    min-width: 0;
+    font-size: 0.85em;
+}
+
+.spinner,
+.spinner:after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+.spinner {
+    --col: 97, 143, 255;
+    --opacity: 0.2;
+    --width: 0.25em;
+    margin: 60px auto;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: var(--width) solid rgba(var(--col), var(--opacity));
+    border-right: var(--width) solid rgba(var(--col), var(--opacity));
+    border-bottom: var(--width) solid rgba(var(--col), var(--opacity));
+    border-left: var(--width) solid rgba(var(--col), 1);
+    transform: translateZ(0);
+    animation: spin 1.1s infinite linear;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.player .play {
+    min-width: 4.5em;
+}
